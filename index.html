@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Neon Kitty Catcher</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <main id="app" aria-label="Neon Kitty Catcher game">
+      <canvas id="gameCanvas" width="1280" height="720" aria-label="Game arena"></canvas>
+      <video id="cameraVideo" playsinline muted></video>
+      <canvas id="trackingCanvas" width="160" height="90"></canvas>
+
+      <section class="hud" aria-label="Game status">
+        <div class="brand">Neon Kitty Catcher</div>
+        <div class="metric"><span>Score</span><strong id="score">0</strong></div>
+        <div class="metric"><span>Time</span><strong id="time">60</strong></div>
+        <div id="cameraStatus" class="camera-status">Camera warming up</div>
+      </section>
+
+      <button id="startButton" class="primary-action" type="button">Start Camera Game</button>
+
+      <section id="gameOverPanel" class="game-over" hidden>
+        <div class="game-over-inner">
+          <h1>Game Over</h1>
+          <p>Processed cats: <strong id="finalScore">0</strong></p>
+          <button id="restartButton" class="primary-action" type="button">Restart</button>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

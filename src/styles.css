@@ -1,0 +1,205 @@
+:root {
+  color-scheme: dark;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background: #05020b;
+  color: #f8fbff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+body {
+  background:
+    radial-gradient(circle at 12% 18%, rgba(0, 255, 171, 0.22), transparent 24%),
+    radial-gradient(circle at 74% 28%, rgba(255, 0, 229, 0.24), transparent 28%),
+    radial-gradient(circle at 45% 88%, rgba(255, 242, 0, 0.16), transparent 28%),
+    linear-gradient(135deg, #030108 0%, #130022 44%, #031a20 100%);
+}
+
+#app {
+  position: relative;
+}
+
+#gameCanvas {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  filter: saturate(1.25) contrast(1.08);
+}
+
+#cameraVideo,
+#trackingCanvas {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  width: 160px;
+  height: 90px;
+  border: 1px solid rgba(132, 255, 238, 0.45);
+  border-radius: 8px;
+  opacity: 0.18;
+  pointer-events: none;
+}
+
+#trackingCanvas {
+  display: none;
+}
+
+.hud {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  right: 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  pointer-events: none;
+}
+
+.brand {
+  padding: 10px 14px;
+  border: 1px solid rgba(0, 255, 204, 0.48);
+  border-radius: 8px;
+  background: rgba(4, 8, 18, 0.58);
+  color: #9efff0;
+  font-weight: 900;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  text-shadow: 0 0 18px #00ffcc;
+  box-shadow: 0 0 24px rgba(0, 255, 204, 0.22);
+}
+
+.metric,
+.camera-status {
+  min-width: 94px;
+  padding: 9px 12px;
+  border: 1px solid rgba(255, 0, 216, 0.42);
+  border-radius: 8px;
+  background: rgba(10, 4, 20, 0.62);
+  box-shadow: 0 0 24px rgba(255, 0, 216, 0.18);
+}
+
+.metric span {
+  display: block;
+  color: #ffd8fa;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.metric strong {
+  color: #fbff29;
+  font-size: 24px;
+  line-height: 1;
+  text-shadow: 0 0 16px #fbff29;
+}
+
+.camera-status {
+  margin-left: auto;
+  width: min(310px, 34vw);
+  color: #d9fff8;
+  font-size: 13px;
+  line-height: 1.25;
+}
+
+.primary-action {
+  position: absolute;
+  left: 50%;
+  bottom: 36px;
+  transform: translateX(-50%);
+  border: 1px solid rgba(0, 255, 204, 0.72);
+  border-radius: 8px;
+  padding: 13px 20px;
+  background: linear-gradient(90deg, #00ffcc, #fbff29 48%, #ff28d4);
+  color: #08000f;
+  font-weight: 950;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  box-shadow:
+    0 0 20px rgba(0, 255, 204, 0.5),
+    0 0 42px rgba(255, 40, 212, 0.35);
+  cursor: pointer;
+}
+
+.primary-action:hover {
+  filter: brightness(1.1);
+}
+
+.game-over {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: rgba(2, 1, 8, 0.68);
+  backdrop-filter: blur(7px);
+}
+
+.game-over[hidden] {
+  display: none;
+}
+
+.game-over-inner {
+  width: min(430px, calc(100vw - 32px));
+  border: 1px solid rgba(251, 255, 41, 0.5);
+  border-radius: 8px;
+  padding: 28px;
+  text-align: center;
+  background: rgba(12, 5, 24, 0.88);
+  box-shadow:
+    0 0 44px rgba(251, 255, 41, 0.22),
+    inset 0 0 40px rgba(255, 0, 216, 0.12);
+}
+
+.game-over h1 {
+  margin: 0 0 10px;
+  color: #ff28d4;
+  font-size: clamp(34px, 8vw, 64px);
+  letter-spacing: 0;
+  text-shadow: 0 0 26px #ff28d4;
+}
+
+.game-over p {
+  margin: 0 0 24px;
+  color: #e9fff9;
+  font-size: 18px;
+}
+
+.game-over .primary-action {
+  position: static;
+  transform: none;
+}
+
+@media (max-width: 720px) {
+  .hud {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .brand {
+    width: 100%;
+    font-size: 13px;
+  }
+
+  .camera-status {
+    order: 5;
+    margin-left: 0;
+    width: 100%;
+  }
+
+  #cameraVideo {
+    width: 118px;
+    height: 67px;
+  }
+}
