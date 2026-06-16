@@ -1,38 +1,68 @@
-# Neon Kitty Catcher
+Codex APP + GPT 5.5 medium reasoning
 
-Neon Kitty Catcher is a Fruit Ninja inspired browser game where cats fly across a neon canvas. The player uses camera-based finger tracking to catch cats, drag them into the glass on the right side, and transform them into dissolving pills for points.
+Task: Develop a Browser Game Called Neon Kitty Catcher
 
-## Installation
+Create a JavaScript browser game inspired by Fruit Ninja.
 
-```bash
-cd ./catopillsninja_gpt55
-npm install
-```
+Concept
 
-## Run
+Cats fly across the screen.
 
-```bash
-npm start
-```
+The player uses the device camera. The system tracks the movement of the player’s finger in front of the camera. The player must catch cats with finger movements and move them into a glass positioned on the right side of the screen.
 
-Open the printed local URL in a browser. Camera permission is required for normal play. If the camera is unavailable, the game switches to demo tracking so the scene still runs.
+When a cat is dropped into the glass, it transforms into a pill and dissolves.
 
-## Test
+The player earns points for successfully processing cats.
 
-```bash
-npm test
-```
+Visual Style
 
-The Playwright HTML report is generated at:
+* Acidic, vibrant colors
+* Neon effects
+* Strong glow effects
+* Psychedelic atmosphere
+* Visually rich animations
+* Modern and striking appearance
 
-```text
-playwright-report/index.html
-```
+Requirements
 
-## Project Structure
+* The game must run in a web browser.
+* Controls must use the device camera.
+* Finger tracking must be the primary interaction method.
+* Cats must be catchable and movable.
+* A glass must be positioned on the right side of the screen.
+* Dropping a cat into the glass must trigger a transformation animation.
+* The resulting pill must dissolve.
+* The game must include a scoring system.
+* The player must be able to restart the game after a game-over state.
 
-- `index.html` - application shell and HUD markup.
-- `src/main.js` - game loop, camera finger tracking, collision, scoring, restart, and animation logic.
-- `src/styles.css` - neon visual design and responsive layout.
-- `tests/game.spec.js` - Playwright end-to-end tests for start, camera-control interaction, scoring, game over, and restart.
-- `playwright.config.js` - Playwright web server and HTML report configuration.
+Implementation Quality
+
+The code must be clean, understandable, and maintainable.
+
+All architectural and technical decisions should be made independently.
+
+Testing
+
+End-to-end automated tests using Playwright are mandatory.
+
+The tests must cover the primary user scenarios of the game.
+
+Validation
+
+After development is complete, you must:
+
+1. Run all end-to-end tests.
+2. Show the test execution results.
+3. Generate and present a Playwright report.
+4. Confirm that all tests pass successfully.
+
+Final Deliverables
+
+After completing the project, provide:
+
+* Installation instructions
+* Run instructions
+* Test execution instructions
+* The path or link to the Playwright report
+* A brief description of the project structure
+
